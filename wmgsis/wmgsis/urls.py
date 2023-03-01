@@ -2,6 +2,8 @@ from django.contrib import admin
 from django.urls import path, include
 from django.contrib.auth import views as auth_views
 from django.views.generic.base import TemplateView
+from django.conf import settings
+from django.conf.urls.static import static
 
 from . import views
 
@@ -22,4 +24,4 @@ urlpatterns = [
     path("success/", views.success, name="success"),
     path("settings/", views.settings, name="settings"),
 
-]
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
