@@ -1,6 +1,5 @@
 
 *.pyc
-*.py
 *.fish
 venv/
 wmgsis/assets/
