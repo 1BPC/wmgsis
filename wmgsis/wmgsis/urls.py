@@ -9,10 +9,8 @@ from . import views
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-
     # path("", include("WMGSIS Assignment.apps.public.urls")),
-   # path("accounts/", include("WMGSIS Assignment.apps.accounts.urls")),
-
+    # path("accounts/", include("WMGSIS Assignment.apps.accounts.urls")),
     path("", views.index, name="index"),
     path("index/", views.index, name="index"),
     path("health/", views.health, name="health"),
@@ -23,5 +21,4 @@ urlpatterns = [
     path("satisfaction/", views.satisfaction, name="satisfaction"),
     path("success/", views.success, name="success"),
     path("settings/", views.settings, name="settings"),
-
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
