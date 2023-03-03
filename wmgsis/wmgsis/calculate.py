@@ -49,11 +49,7 @@ class Calculate_Grad:
             my_dict[value[1]] = index
            
            # print(value[0], value[1], index) 
-
-        print(my_dict)
-
         return my_dict
-         
 
 
        
