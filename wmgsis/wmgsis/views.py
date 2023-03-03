@@ -13,7 +13,6 @@ def index(request):
 
     context = {"grades":degree_class, "city":salary_data, "activity":activity}
 
-    #print(request.user)  # .user is user object of the current session
     return render(request, "index.html", context)
 
 
