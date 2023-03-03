@@ -18,7 +18,7 @@ urlpatterns = [
     path("satisfaction/", views.satisfaction, name="satisfaction"),
     path("success/", views.success, name="success"),
     path("settings/", views.settings, name="settings"),
-
+    path("delete/<id>/", views.delete_graduate, name="delete_graduate"),
     # auth 
     path("accounts/login/", auth_views.LoginView.as_view(template_name="accounts/login.html/"), name="login"),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
