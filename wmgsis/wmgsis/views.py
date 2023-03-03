@@ -56,8 +56,8 @@ def satisfaction(request):
     return render(request, "satisfaction.html")
    
 
-def profile(request):
-    return render(request, "profile.html")
+def manage(request):
+    return render(request, "manage.html")
 
 
 def login(request):
