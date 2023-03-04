@@ -17,7 +17,7 @@ def index(request):
     # render takes a request, a template and a payload to pass  
     return render(request, "index.html", context)
 
-
+# remove
 def graduate(request):
     return render(request, "graduate.html")
 
@@ -80,7 +80,7 @@ def login(request):
 def register(request):
     return render(request, "register.html")
 
-
+# delete
 def settings(request):
     return render(request, "settings.html")
 
