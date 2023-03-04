@@ -3,8 +3,13 @@ import sqlite3
 from collections import defaultdict
 
 class Calculate_Grad:
+    """ A class which gets gets data from the database, and prepares it in such a 
+    way to be able to add it to a dictionary."""
 
     def getDegreeClassData(self):
+        """ Gets data on degree classification
+        Returns a dictionary of the grade and the number of people with that grade
+        for example {'First':3} """
 
         first = Graduate.objects.filter(degree_classifcation="First")
         upper_second = Graduate.objects.filter(degree_classifcation="Upper Second")
@@ -20,6 +25,11 @@ class Calculate_Grad:
     
 
     def getSalaryData(self):
+        """ Gets salary data from the
+        Creates a database connection, calls a cursor object, then 
+        executes custom SQL directly, returning the results to the row variable.
+        Loop through the list creating a dictionary of city: salary """
+
         conn = sqlite3.connect(database="db.sqlite3")
         cursor = conn.cursor()
 
@@ -33,6 +43,14 @@ class Calculate_Grad:
     
 
     def getGradActivity(self):
+        """ Gets graduate activity data from the database
+
+        Creates a database connection, calls a cursor object, then 
+        executes custom SQL directly, returning the results to the row variable.
+        Loop through the list creating a dictionary of city: salary
+
+        # Returns dictionary, Example {'Employed':3} """
+
         conn = sqlite3.connect(database="db.sqlite3")
         cursor = conn.cursor()
 
@@ -41,14 +59,9 @@ class Calculate_Grad:
 
         my_dict = {}
 
-        cohort_years = []
-
         for index, value in enumerate(rows):
-            
-            # Example {'Employed':3}
             my_dict[value[1]] = index
            
-           # print(value[0], value[1], index) 
         return my_dict
 
 

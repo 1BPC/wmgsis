@@ -1,13 +1,12 @@
 from django import forms
 from django.forms import ModelForm
-
 from .models import Graduate
 
 
 # Create a Graduate Form
 class GraduateForm(ModelForm):
 
-
+    # Meta is the 'inner class' It allows you to change the behavior of the model fields
     class Meta:
         model = Graduate
         fields = ['graduate_name', 'cohort', 'salary', 'city', 'activity', 'degree_classifcation']
