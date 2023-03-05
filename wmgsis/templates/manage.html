@@ -150,6 +150,7 @@
                                                     <td>{{ graduate.activity }} </td>
                                                     <td>{{ graduate.degree_classifcation }} </td>
                                                     <td><a href=" {% url 'delete_graduate' graduate.id %}">Delete</a></td>
+                                                    <td><a href=" {% url 'manage' %}">Edit</a></td>
                                                 </tr>
                                                 {% endfor %}
                                                 <table>
